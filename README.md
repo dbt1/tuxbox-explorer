@@ -1,50 +1,89 @@
-# Tuxbox-Explorer
+# Tuxbox File Explorer
 
-Version: 0.1.0
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
 
-A lightweight PHP based project to navigate through directories and files in a secure and user-friendly way. This tool allows you to explore folders and files on a server while avoiding external dependencies and ensuring privacy.
+Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien sicher und benutzerfreundlich zu durchsuchen. Dieses Tool erlaubt es, Ordner und Dateien auf einem Server zu erkunden, ohne externe Abhängigkeiten zu benötigen, und bietet gleichzeitig ein hohes Maß an Privatsphäre.
 
 ## Features
-- Breadcrumb navigation to easily jump between directories.
-- Secure handling of file paths to prevent directory traversal attacks.
-- Customizable ignore lists for files and directories.
-- Local integration of Bootstrap and Font Awesome for styling.
-- AJAX-based dynamic folder loading.
+
+- **Breadcrumb-Navigation**: Einfaches Springen zwischen Verzeichnissen.
+- **Sichere Pfadbehandlung**: Schutz vor Directory-Traversal-Angriffen.
+- **Anpassbare Ignorierlisten**: Blendet bestimmte Dateien und Verzeichnisse aus.
+- **Lokale Ressourcen**: Bootstrap und Font Awesome werden lokal bereitgestellt.
+- **Dynamisches Nachladen**: Ordnerinhalte werden per AJAX geladen.
 
 ## Installation
-1. Clone the repository:
-2. Configure the application. Rename `config/config-sample.php` to `config/config.php` and by editing if required, to set your base directory, ignore lists and captions.
-3. Place the application on a PHP-enabled server.
-4. Open `index.php` in your browser to start navigating your directories.
 
-## Usage
-- Click on folders to explore their contents.
-- Use the breadcrumb navigation to jump back to parent directories.
-- Customize ignore lists to hide specific files or folders from the listing.
+1. **Repository klonen:**
+   ```bash
+   git clone https://github.com/dbt1/tuxbox-explorer && cd tuxbox-explorer
+   ```
+2. **Konfiguration anpassen:**
+   - Benenne `config/config-sample.php` in `config/config.php` um.
+   - Passe wenn erforderlich die Listen in `config.php` an, um bestimmte Dateien und Ordner ein- oder auszublenden.
+   - Passe bei Bedarf die Beschriftungen und Fenstertexte in `config.php` an.
+2. **Lade den gesamten Inhalt aus dem geklonten Repository auf einen PHP-fähigen Server hoch.**
+3. **Starten:**
+   Öffne `index.php` im Browser.
 
-## Resources Used
-This repository provides a local copy of the following resources to enable usage without external dependencies and to improve user privacy:
+## Nutzung
 
-- Bootstrap v5.3.0
-- CSS: `bootstrap.min.css`
-- JS: `bootstrap.bundle.min.js`
-- Source: [https://getbootstrap.com](https://getbootstrap.com)
+- **Ordner durchsuchen:**
+  Klicke auf Ordner, um deren Inhalte anzuzeigen.
+- **Breadcrumb-Navigation:**
+  Nutze die Breadcrumb-Leiste, um schnell zu übergeordneten Verzeichnissen zu wechseln.
 
-- Font Awesome v6.4.0
-- CSS: `all.min.css`
-- JS: `all.min.js`
-- Source: [https://fontawesome.com](https://fontawesome.com)
+## Systemanforderungen
 
-## License
+- PHP ab Version 7.4 (empfohlen: PHP 8.0+).
+- Webserver mit PHP-Unterstützung (z. B. Apache, Nginx, Lighttpd).
+- Schreib- und Leserechte für das Zielverzeichnis.
 
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for more details.
+## Konfigurationshinweise
 
-### Notes on the used resources:
+Die Datei `config.php` erlaubt die Anpassung folgender Parameter:
 
-- **Bootstrap** is provided under the MIT License. For more details, see: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE)
-- **Font Awesome** consists of various parts under different licenses:
-- Icons: CC BY 4.0
-- Fonts: SIL Open Font License 1.1
-- Code: MIT License
+- **ROOT\_PATH**: Absoluter Pfad, der als Wurzelverzeichnis dient.
+- **IGNORE\_DIR\_PATTERNS**: Verzeichnisse, die ignoriert werden sollen (z. B. `.git`, `node_modules`).
+- **IGNORE\_FILE\_PATTERNS**: Dateien, die ignoriert werden sollen (z. B. `*.log`, `*.html`).
+- **ALLOW\_DIR\_PATTERNS**: Verzeichnisse, die trotz Ignorierliste angezeigt werden sollen.
+- **ALLOW\_FILE\_PATTERNS**: Dateien, die trotz Ignorierliste angezeigt werden sollen.
+- **DIRECTORY\_ALIASES**: Anzeigenamen für Verzeichnisse festlegen.
+- 
+Für die Datenschutz Informationen:
 
-Please make sure to comply with the respective license terms of the sources listed above.
+- **DATA_CONTROLLER_NAME**
+- **DATA_CONTROLLER_ADDRESS**
+- **DATA_CONTROLLER_EMAIL**
+- **DATA_CONTROLLER_EMAIL_ALIAS**
+
+## Verwendete Ressourcen
+
+Dieses Repository stellt lokale Kopien der folgenden Ressourcen bereit, um die Nutzung ohne externe Abhängigkeiten zu ermöglichen und die Privatsphäre zu schützen:
+
+- **Bootstrap v5.3.0**
+
+  - CSS: `bootstrap.min.css`
+  - JS: `bootstrap.bundle.min.js`
+  - Quelle: [https://getbootstrap.com](https://getbootstrap.com)
+
+- **Font Awesome v6.4.0**
+
+  - CSS: `all.min.css`
+  - JS: `all.min.js`
+  - Quelle: [https://fontawesome.com](https://fontawesome.com)
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Details siehe [LICENSE](./LICENSE).
+
+### Hinweise zu den genutzten Ressourcen:
+
+- **Bootstrap**: MIT-Lizenz. Details: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
+- **Font Awesome**: Verschiedene Lizenzen:
+  - Icons: CC BY 4.0
+  - Fonts: SIL Open Font License 1.1
+  - Code: MIT-Lizenz
+
+Bitte beachte die jeweiligen Lizenzbedingungen der oben genannten Ressourcen.
+

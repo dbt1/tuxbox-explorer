@@ -548,7 +548,8 @@ HTML;
     </div>
 
     <footer>
-        &copy; {$COPYRIGHT_YEAR} {$COPYRIGHT_OWNER} {$FOOTER_TEXT}
+        &copy; {$COPYRIGHT_YEAR} {$COPYRIGHT_OWNER} {$FOOTER_TEXT} &bull; 
+        <a href="privacy.php" target="_blank">Privacy Policy</a>
     </footer>
 
     <!-- Local Bootstrap JS -->

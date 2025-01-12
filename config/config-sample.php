@@ -18,6 +18,13 @@
  */
 $ROOT_PATH = realpath(__DIR__ . '/../');
 
+// Data controller information for the privacy policy site
+$DATA_CONTROLLER_NAME    = "Your Company / Your Name";
+$DATA_CONTROLLER_ADDRESS = "Your Address";
+$DATA_CONTROLLER_EMAIL   = "youremail@example.com";
+// Email display alias (z.B. "Contact Us" statt der E-Mail-Adresse)
+$DATA_CONTROLLER_EMAIL_ALIAS = "Contact Us";
+
 /**
  * IGNORE_DIR_PATTERNS:
  * Wildcard patterns for directories to be ignored.
@@ -46,6 +53,7 @@ $IGNORE_FILE_PATTERNS = [
     '*.js',
     'LICENSE',
     '*.md',
+    'privacy.php',
     // ...
 ];
 
