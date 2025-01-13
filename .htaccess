@@ -1,0 +1,35 @@
+# Disable directory listing
+Options -Indexes
+
+# Deny access to sensitive files by pattern
+<FilesMatch "^.*(\.inc|\.bak|\.sql|config\.php|config-sample\.php|README\.md|LICENSE|privacy\.php)$">
+    Require all denied
+</FilesMatch>
+
+# Deny access to the .htaccess file itself
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# Deny access to hidden files and directories (start with a dot)
+RedirectMatch 404 /\..*$
+
+# Use mod_rewrite for directory protection
+RewriteEngine On
+
+# Block access to specific sensitive directories
+RewriteRule ^(config)($|/) - [F,L]
+
+# Prevent execution of scripts in assets directories
+<Directory "assets">
+    <FilesMatch "\.(php|phtml|php3|php4|php5|phps)$">
+        Require all denied
+    </FilesMatch>
+</Directory>
+
+# Force security headers (optional, wenn dein Server dies unterstützt)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
