@@ -12,6 +12,13 @@ Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien siche
 - **Lokale Ressourcen**: Bootstrap und Font Awesome werden lokal bereitgestellt.
 - **Dynamisches Nachladen**: Ordnerinhalte werden per AJAX geladen.
 
+## Systemanforderungen
+
+- PHP ab Version 7.4 (empfohlen: PHP 8.0+).
+- Webserver mit PHP-Unterstützung (z. B. Apache, Nginx, Lighttpd).
+- PHP-Module: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
+- Schreib- und Leserechte für das Zielverzeichnis.
+
 ## Installation
 
 1. **Repository klonen:**
@@ -21,9 +28,10 @@ Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien siche
 2. **Konfiguration anpassen:**
    - Benenne `config/config-sample.php` in `config/config.php` um.
    - Passe wenn erforderlich die Listen in `config.php` an, um bestimmte Dateien und Ordner ein- oder auszublenden.
+     Lege den oder die Datenordner flexibel über Ignor und Allow-Listen fest, in der die gehosteten Dateien liegen, die zur Verfügung gestellt werden sollen.
    - Passe bei Bedarf die Beschriftungen und Fenstertexte in `config.php` an.
-2. **Lade den gesamten Inhalt aus dem geklonten Repository auf einen PHP-fähigen Server hoch.**
-3. **Starten:**
+3. **Lade den gesamten Inhalt aus dem geklonten Repository auf einen PHP-fähigen Server hoch.**
+4. **Starten:**
    Öffne `index.php` im Browser.
 
 ## Nutzung
@@ -32,12 +40,6 @@ Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien siche
   Klicke auf Ordner, um deren Inhalte anzuzeigen.
 - **Breadcrumb-Navigation:**
   Nutze die Breadcrumb-Leiste, um schnell zu übergeordneten Verzeichnissen zu wechseln.
-
-## Systemanforderungen
-
-- PHP ab Version 7.4 (empfohlen: PHP 8.0+).
-- Webserver mit PHP-Unterstützung (z. B. Apache, Nginx, Lighttpd).
-- Schreib- und Leserechte für das Zielverzeichnis.
 
 ## Konfigurationshinweise
 
@@ -49,13 +51,13 @@ Die Datei `config.php` erlaubt die Anpassung folgender Parameter:
 - **ALLOW\_DIR\_PATTERNS**: Verzeichnisse, die trotz Ignorierliste angezeigt werden sollen.
 - **ALLOW\_FILE\_PATTERNS**: Dateien, die trotz Ignorierliste angezeigt werden sollen.
 - **DIRECTORY\_ALIASES**: Anzeigenamen für Verzeichnisse festlegen.
-- 
+
 Für die Datenschutz Informationen:
 
-- **DATA_CONTROLLER_NAME**
-- **DATA_CONTROLLER_ADDRESS**
-- **DATA_CONTROLLER_EMAIL**
-- **DATA_CONTROLLER_EMAIL_ALIAS**
+- **DATA\_CONTROLLER\_NAME**
+- **DATA\_CONTROLLER\_ADDRESS**
+- **DATA\_CONTROLLER\_EMAIL**
+- **DATA\_CONTROLLER\_EMAIL\_ALIAS**
 
 ## Verwendete Ressourcen
 
@@ -86,4 +88,3 @@ Dieses Projekt steht unter der MIT-Lizenz. Details siehe [LICENSE](./LICENSE).
   - Code: MIT-Lizenz
 
 Bitte beachte die jeweiligen Lizenzbedingungen der oben genannten Ressourcen.
-
