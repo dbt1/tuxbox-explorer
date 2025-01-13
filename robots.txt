@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /config/
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/images/
