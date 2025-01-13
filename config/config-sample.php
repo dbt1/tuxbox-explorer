@@ -48,12 +48,14 @@ $IGNORE_FILE_PATTERNS = [
     '*.css',
     'favicon.ico',
     '.gitignore',
+    '.htacces*',
     '*.html',
     'index.php',
     '*.js',
     'LICENSE',
     '*.md',
     'privacy.php',
+    'robots.txt',
     // ...
 ];
 
