@@ -1,8 +1,6 @@
 <!-- LANGUAGE_LINKS_START -->
 [🇩🇪 German](README_de.md) | [🇬🇧 English](README_en.md) | [🇪🇸 Spanish](README_es.md) | [🇫🇷 French](README_fr.md) | <span style="color: grey;">🇮🇹 Italian</span>
 <!-- LANGUAGE_LINKS_END -->
-
-
 # Esplora file Tuxbox
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
@@ -46,7 +44,7 @@ Un progetto leggero basato su PHP per sfogliare directory e file in modo sicuro 
 Il file `config.php` consente di regolare i seguenti parametri:
 
 - **ROOT\_PATH**: percorso assoluto che funge da directory principale.
-- **IGNORE\_DIR\_PATTERNS**: Directory da ignorare (es. `.git`, `node_modules`).
+- **IGNORE\_DIR\_PATTERNS**: Directory da ignorare (ad esempio `.git`, `node_modules`).
 - **IGNORE\_FILE\_PATTERNS**: file da ignorare (ad esempio `*.log`, `*.html`).
 - **ALLOW\_DIR\_PATTERNS**: directory che dovrebbero essere visualizzate nonostante l'elenco da ignorare.
 - **ALLOW\_FILE\_PATTERNS**: file che dovrebbero essere visualizzati nonostante l'elenco da ignorare.

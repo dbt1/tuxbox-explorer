@@ -1,8 +1,6 @@
 <!-- LANGUAGE_LINKS_START -->
 [🇩🇪 German](README_de.md) | [🇬🇧 English](README_en.md) | [🇪🇸 Spanish](README_es.md) | <span style="color: grey;">🇫🇷 French</span> | [🇮🇹 Italian](README_it.md)
 <!-- LANGUAGE_LINKS_END -->
-
-
 # Explorateur de fichiers Tuxbox
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
@@ -18,7 +16,7 @@ Un projet léger basé sur PHP pour parcourir les répertoires et les fichiers d
 ## Configuration système requise
 
 - PHP à partir de la version 7.4 (recommandé : PHP 8.0+).
-- Serveurs Web avec support PHP (par exemple Apache, Nginx, Lighttpd).
+- Serveur Web avec support PHP (par exemple Apache, Nginx, Lighttpd).
 - Modules PHP : php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
 - Autorisations d'écriture et de lecture pour le répertoire cible.
 ## installation
@@ -45,7 +43,7 @@ Un projet léger basé sur PHP pour parcourir les répertoires et les fichiers d
 
 Le fichier `config.php` permet d'ajuster les paramètres suivants :
 
-- **ROOT\_PATH** : Chemin absolu qui sert de répertoire racine.
+- **ROOT\_PATH** : Chemin absolu qui sert de répertoire racine.
 - **IGNORE\_DIR\_PATTERNS** : Répertoires à ignorer (par exemple `.git`, `node_modules`).
 - **IGNORE\_FILE\_PATTERNS** : Fichiers à ignorer (par exemple `*.log`, `*.html`).
 - **ALLOW\_DIR\_PATTERNS** : Répertoires qui doivent être affichés malgré la liste des ignorés.

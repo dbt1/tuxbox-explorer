@@ -1,8 +1,6 @@
 <!-- LANGUAGE_LINKS_START -->
 [🇩🇪 German](README_de.md) | <span style="color: grey;">🇬🇧 English</span> | [🇪🇸 Spanish](README_es.md) | [🇫🇷 French](README_fr.md) | [🇮🇹 Italian](README_it.md)
 <!-- LANGUAGE_LINKS_END -->
-
-
 # Tuxbox File Explorer
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
@@ -18,7 +16,7 @@ A lightweight PHP-based project to browse directories and files in a secure and 
 ## System requirements
 
 - PHP from version 7.4 (recommended: PHP 8.0+).
-- Web servers with PHP support (e.g. Apache, Nginx, Lighttpd).
+- Web server with PHP support (e.g. Apache, Nginx, Lighttpd).
 - PHP modules: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
 - Write and read permissions for the target directory.
 ## installation

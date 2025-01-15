@@ -1,8 +1,6 @@
 <!-- LANGUAGE_LINKS_START -->
 [🇩🇪 German](README_de.md) | [🇬🇧 English](README_en.md) | <span style="color: grey;">🇪🇸 Spanish</span> | [🇫🇷 French](README_fr.md) | [🇮🇹 Italian](README_it.md)
 <!-- LANGUAGE_LINKS_END -->
-
-
 # Explorador de archivos Tuxbox
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
@@ -18,7 +16,7 @@ Un proyecto ligero basado en PHP para explorar directorios y archivos de forma s
 ## Requisitos del sistema
 
 - PHP a partir de la versión 7.4 (recomendado: PHP 8.0+).
-- Servidores web con soporte PHP (por ejemplo, Apache, Nginx, Lighttpd).
+- Servidor web con soporte PHP (por ejemplo, Apache, Nginx, Lighttpd).
 - Módulos PHP: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
 - Permisos de escritura y lectura para el directorio de destino.
 ## instalación
