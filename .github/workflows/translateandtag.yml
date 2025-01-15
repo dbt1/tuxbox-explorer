@@ -74,11 +74,11 @@ jobs:
 
     - name: Tagging
       run: |
-        python tagit.py -f README_de.md -f README_en.md -f README_es.md -f README_fr.md -f README_it.md
+        python tagit.py -f index.php -f README_de.md -f README_en.md -f README_es.md -f README_fr.md -f README_it.md --scheme-file tagit-config.json
 
     - name: Commit and push version and tag changes
       run: |
-        git add README*.md
+        git add README*.md index.php
         git commit -m "tagging: Automatically updated tags [skip ci]" || echo "No changes to commit"
         git push
         git push --tags
