@@ -1,3 +1,8 @@
+<!-- LANGUAGE_LINKS_START -->
+<span style="color: grey;">🇩🇪 German</span> | [🇬🇧 English](README_en.md) | [🇪🇸 Spanish](README_es.md) | [🇫🇷 French](README_fr.md) | [🇮🇹 Italian](README_it.md)
+<!-- LANGUAGE_LINKS_END -->
+
+
 # Tuxbox File Explorer
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
