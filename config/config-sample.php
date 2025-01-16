@@ -35,7 +35,7 @@ $IGNORE_DIR_PATTERNS = [
     'assets',
     'config',
     'node_modules',
-    '.git',
+    '.git*',
     // More patterns or "*"
 ];
 
