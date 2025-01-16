@@ -7,7 +7,7 @@ on:
     paths:
       - 'README_de.md'
       - 'index.php'
-      - 'config-sample.php'
+      - 'config/config-sample.php'
       - 'privacy.php'
 
 permissions:
