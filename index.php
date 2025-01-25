@@ -89,13 +89,21 @@ $APP_VERSION = '0.1.0';
 // ---------------------------
 require_once $configPath;
 
+/**
+ * Decide which path to use as the "root" for the explorer:
+ * If $FILES_DIRECTORY is set and valid, we use that. Otherwise we fall back to $ROOT_PATH.
+ */
+$EXPLORER_PATH = ($FILES_DIRECTORY && is_dir($FILES_DIRECTORY))
+    ? $FILES_DIRECTORY
+    : $ROOT_PATH;
+
 /* --------------------------------------------------------
    2) HELPER FUNCTIONS
    -------------------------------------------------------- */
 
 /**
  * buildSafePath:
- * Ensures the requested path is inside ROOT_PATH.
+ * Ensures the requested path is inside ROOT_PATH (or EXPLORER_PATH in this case).
  *
  * @param string $rootPath Absolute path to the root directory
  * @param string $subPath  Requested subpath (relative or partial path)
@@ -164,13 +172,13 @@ function shouldIgnore($entry, array $ignoreDirs, array $ignoreFiles, array $allo
     if (is_dir($fullPath)) {
         foreach ($allowDirs as $allow) {
             if (fnmatch($allow, $entry, FNM_CASEFOLD)) {
-                return false; 
+                return false;
             }
         }
     } else {
         foreach ($allowFiles as $allow) {
             if (fnmatch($allow, $entry, FNM_CASEFOLD)) {
-                return false; 
+                return false;
             }
         }
     }
@@ -178,13 +186,13 @@ function shouldIgnore($entry, array $ignoreDirs, array $ignoreFiles, array $allo
     if (is_dir($fullPath)) {
         foreach ($ignoreDirs as $pattern) {
             if (fnmatch($pattern, $entry, FNM_CASEFOLD)) {
-                return true; 
+                return true;
             }
         }
     } else {
         foreach ($ignoreFiles as $pattern) {
             if (fnmatch($pattern, $entry, FNM_CASEFOLD)) {
-                return true; 
+                return true;
             }
         }
     }
@@ -299,11 +307,12 @@ function filterEntries(array $entries, $filter = '') {
  * }
  */
 function listItems($path, array $ignoreDirs, array $ignoreFiles, $sortMode, $filter, $page = 1, $itemsPerPage = 20) {
-    global $ROOT_PATH, $DIRECTORY_ALIASES, $ALLOW_DIR_PATTERNS, $ALLOW_FILE_PATTERNS;
+    // We'll continue using the global config arrays, but for root references we use $EXPLORER_PATH now
+    global $EXPLORER_PATH, $DIRECTORY_ALIASES, $ALLOW_DIR_PATTERNS, $ALLOW_FILE_PATTERNS;
 
     $output        = [];
     $entriesForSort= [];
-    $rootRealPath  = realpath($ROOT_PATH);
+    $rootRealPath  = realpath($EXPLORER_PATH);
     $rootLen       = strlen($rootRealPath);
 
     if ($handle = opendir($path)) {
@@ -387,9 +396,9 @@ function listItems($path, array $ignoreDirs, array $ignoreFiles, $sortMode, $fil
     }
 
     // if at root, optionally add top-level entries from ALLOW_DIR_PATTERNS
-    if ($path === $ROOT_PATH) {
+    if ($path === $EXPLORER_PATH) {
         foreach ($ALLOW_DIR_PATTERNS as $allowedRelative) {
-            $allowedFull = realpath($ROOT_PATH . DIRECTORY_SEPARATOR . $allowedRelative);
+            $allowedFull = realpath($EXPLORER_PATH . DIRECTORY_SEPARATOR . $allowedRelative);
             if (!$allowedFull) {
                 continue;
             }
@@ -468,11 +477,11 @@ if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
     $page            = (int)($_GET['page']     ?? 1);
     $itemsPerPage    = (int)($_GET['itemsPerPage'] ?? 20);
 
-    // ensure path is valid
-    $safePath = buildSafePath($ROOT_PATH, $requestedFolder);
+    // ensure path is valid (replace $ROOT_PATH with $EXPLORER_PATH)
+    $safePath = buildSafePath($EXPLORER_PATH, $requestedFolder);
     if ($safePath === null) {
         header('Content-Type: application/json');
-        echo json_encode(['error' => 'Invalid directory access. Path is not inside ROOT_PATH']);
+        echo json_encode(['error' => 'Invalid directory access. Path is not inside EXPLORER_PATH']);
         exit;
     }
 
@@ -482,7 +491,9 @@ if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
     $totalCount    = $listingResult['totalCount'];
     $currentPage   = $listingResult['page'];
     $totalPages    = $listingResult['totalPages'];
-    $breadcrumb    = buildBreadcrumb($ROOT_PATH, $safePath);
+
+    // For breadcrumb, still show it from the perspective of $EXPLORER_PATH
+    $breadcrumb    = buildBreadcrumb($EXPLORER_PATH, $safePath);
 
     // output JSON
     header('Content-Type: application/json');
@@ -499,8 +510,8 @@ if (isset($_GET['ajax']) && $_GET['ajax'] === '1') {
 /* --------------------------------------------------------
    4) PAGE GENERATION
    -------------------------------------------------------- */
-// generate default (root) listing for first page
-$rootListing = listItems($ROOT_PATH, $IGNORE_DIR_PATTERNS, $IGNORE_FILE_PATTERNS, 'nameAsc', '', 1, 20);
+// generate default (root) listing for first page (replace $ROOT_PATH with $EXPLORER_PATH)
+$rootListing = listItems($EXPLORER_PATH, $IGNORE_DIR_PATTERNS, $IGNORE_FILE_PATTERNS, 'nameAsc', '', 1, 20);
 $fileListHtml = $rootListing['html'];
 $rootCount    = $rootListing['totalCount'];
 

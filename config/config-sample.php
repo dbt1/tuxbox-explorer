@@ -18,6 +18,17 @@
  */
 $ROOT_PATH = realpath(__DIR__ . '/../');
 
+/**
+ * FILES_DIRECTORY:
+ * Optional: If you want the script to display files from a specific directory
+ * (different from $ROOT_PATH), define it here as an absolute path.
+ * If empty or invalid, the script will fall back to $ROOT_PATH.
+ */
+#$FILES_DIRECTORY = realpath(__DIR__ . '/../storage');
+#$FILES_DIRECTORY = realpath('/var/www/my_project/sample');
+#$FILES_DIRECTORY = '/home/user/symlink_to_my_folder';
+#$FILES_DIRECTORY = '/home/user/tuxbox/buildenv/dist';
+
 // Data controller information for the privacy policy site
 $DATA_CONTROLLER_NAME    = "Your Company / Your Name";
 $DATA_CONTROLLER_ADDRESS = "Your Address";
