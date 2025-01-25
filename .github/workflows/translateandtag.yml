@@ -50,9 +50,9 @@ jobs:
       run: |
         cp README_de.md template.md
         python translate-md.py --template-md template.md --output-dir . --prefix README_ --main-doc README.md -c translate-md-config.json -s de
-        rm template.md
+        rm template.md translate-*.*
 
-    - name: Commit and push translated README
+    - name: Commit translated README
       run: |
         git add README*.md
         git commit -m "readme: Automatically translated README"
