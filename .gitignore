@@ -1,4 +1,9 @@
 config.php
 hd*
 venv
-tagit*
+tagit.*
+tagit-*.*
+action.sh
+action.sh
+template.md
+translate-*.*
