@@ -6,86 +6,84 @@
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
 
-Please provide in the editor window
-
-A lightweight, PHP-based project to securely and user-friendly browse directories and files. This tool allows exploring folders and files on a server without requiring external dependencies while offering a high level of privacy.
+Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien sicher und benutzerfreundlich zu durchsuchen. Dieses Tool erlaubt es, Ordner und Dateien auf einem Server zu erkunden, ohne externe Abhängigkeiten zu benötigen, und bietet gleichzeitig ein hohes Maß an Privatsphäre.
 
 ## Features
 
-- Easy navigation between directories.
-- Protection against directory traversal attacks.
-- Customizable ignore lists to hide specific files and directories.
-- Resources like Bootstrap and Font Awesome are provided locally.
+- Einfaches Springen zwischen Verzeichnissen.
+- Schutz vor Directory-Traversal-Angriffen.
+- Anpassbare Ignorierlisten blenden bestimmte Dateien und Verzeichnisse aus.
+- Ressourcen wie Bootstrap und Font Awesome werden lokal bereitgestellt.
 
-## System Requirements
+## Systemanforderungen
 
-- PHP version 7.4 or higher (recommended: PHP 8.0+).
-- Web server with PHP support (e.g., Apache, Nginx, Lighttpd).
-- PHP modules: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
-- Write and read permissions for the target directory.
+- PHP ab Version 7.4 (empfohlen: PHP 8.0+).
+- Webserver mit PHP-Unterstützung (z. B. Apache, Nginx, Lighttpd).
+- PHP-Module: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
+- Schreib- und Leserechte für das Zielverzeichnis.
 
 ## Installation
 
-**1. Clone the repository:**
+**1. Repository klonen:**
 
    ```bash
    git clone https://github.com/dbt1/tuxbox-explorer && cd tuxbox-explorer
    ```
-**2. Adjust configuration:**
+**2. Konfiguration anpassen:**
 
-   - Rename `config/config-sample.php` to `config/config.php`.
-   - Modify the lists in `config.php` if necessary to include or exclude specific files and folders.
-     Define the data folder(s) flexibly through ignore and allow lists to specify which hosted files should be made available.
-   - Adjust the labels and window texts in `config.php` if required.
-   - Upload the entire content of the cloned repository to a PHP-enabled server.
-   - Open `index.php` in the browser.
+   - Benenne `config/config-sample.php` in `config/config.php` um.
+   - Passe wenn erforderlich die Listen in `config.php` an, um bestimmte Dateien und Ordner ein- oder auszublenden.
+     Lege den oder die Datenordner flexibel über Ignor und Allow-Listen fest, in der die gehosteten Dateien liegen, die zur Verfügung gestellt werden sollen.
+   - Passe bei Bedarf die Beschriftungen und Fenstertexte in `config.php` an.
+   - Lade den gesamten Inhalt aus dem geklonten Repository auf einen PHP-fähigen Server hoch.**
+   - Öffne `index.php` im Browser.
 
-## Usage
+## Nutzung
 
-Click on folders to view their contents.
-Use the breadcrumb navigation bar to quickly switch to parent directories.
+Klicke auf Ordner, um deren Inhalte anzuzeigen.
+Nutze die Breadcrumb-Leiste, um schnell zu übergeordneten Verzeichnissen zu wechseln.
 
-## Configuration Notes
+## Konfigurationshinweise
 
-The `config.php` file allows customization of the following parameters:
+Die Datei `config.php` erlaubt die Anpassung folgender Parameter:
 
-Absolute path to serve as the root directory.
+Absoluter Pfad, der als Wurzelverzeichnis dient.
 
    ```bash
    ROOT_PATH
    ```
 
-Directories to ignore (e.g., `.git`, `node_modules`).
+Verzeichnisse, die ignoriert werden sollen (z. B. `.git`, `node_modules`).
 
    ```bash
    IGNORE_DIR_PATTERNS
    ```
 
-Files to ignore (e.g., `*.log`, `*.html`).
+Dateien, die ignoriert werden sollen (z. B. `*.log`, `*.html`).
 
    ```bash
    IGNORE_FILE_PATTERNS
    ```
 
-Directories to display despite the ignore list.
+Verzeichnisse, die trotz Ignorierliste angezeigt werden sollen.
 
    ```bash
    ALLOW_DIR_PATTERNS
    ```
 
-Files to display despite the ignore list.
+Dateien, die trotz Ignorierliste angezeigt werden sollen.
 
    ```bash
    ALLOW_FILE_PATTERNS
    ```
 
-Define display names for directories.
+Anzeigenamen für Verzeichnisse festlegen.
 
    ```bash
    DIRECTORY_ALIASES
    ```
 
-For data protection information:
+Für die Datenschutz Informationen:
 
    ```bash
    DATA_CONTROLLER_NAME
@@ -94,41 +92,41 @@ For data protection information:
    DATA_CONTROLLER_EMAIL_ALIAS
    ```
 
-## Used Resources
+## Verwendete Ressourcen
 
-This repository provides local copies of the following resources to enable usage without external dependencies and ensure privacy:
+Dieses Repository stellt lokale Kopien der folgenden Ressourcen bereit, um die Nutzung ohne externe Abhängigkeiten zu ermöglichen und die Privatsphäre zu schützen:
 
 **Bootstrap v5.3.0**
 
   - CSS: `bootstrap.min.css`
   - JS: `bootstrap.bundle.min.js`
-  - Source: [https://getbootstrap.com](https://getbootstrap.com)
+  - Quelle: [https://getbootstrap.com](https://getbootstrap.com)
 
 **Font Awesome v6.4.0**
 
   - CSS: `all.min.css`
   - JS: `all.min.js`
-  - Source: [https://fontawesome.com](https://fontawesome.com)
+  - Quelle: [https://fontawesome.com](https://fontawesome.com)
 
-## License
+## Lizenz
 
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
+Dieses Projekt steht unter der MIT-Lizenz. Details siehe [LICENSE](./LICENSE).
 
-### Notes on Used Resources:
+### Hinweise zu den genutzten Ressourcen:
 
 **Bootstrap**
 
-MIT License.
+MIT-Lizenz.
 
 Details: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
 
 **Font Awesome**
 
-Various licenses:
+Verschiedene Lizenzen:
 
   - Icons: CC BY 4.0
   - Fonts: SIL Open Font License 1.1
-  - Code: MIT License
+  - Code: MIT-Lizenz
 
-Please refer to the respective license terms of the resources mentioned above.
+Bitte beachte die jeweiligen Lizenzbedingungen der oben genannten Ressourcen.
 
