@@ -1,94 +1,134 @@
 <!-- LANGUAGE_LINKS_START -->
-<span style="color: grey;">🇩🇪 German</span> | [🇬🇧 English](README_en.md) | [🇪🇸 Spanish](README_es.md) | [🇫🇷 French](README_fr.md) | [🇮🇹 Italian](README_it.md)
+<span style="color: grey;">🇩🇪 German</span> | [🇬🇧 English](README_en.md)
 <!-- LANGUAGE_LINKS_END -->
 
 # Tuxbox File Explorer
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
 
-Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien sicher und benutzerfreundlich zu durchsuchen. Dieses Tool erlaubt es, Ordner und Dateien auf einem Server zu erkunden, ohne externe Abhängigkeiten zu benötigen, und bietet gleichzeitig ein hohes Maß an Privatsphäre.
+Please provide in the editor window
+
+A lightweight, PHP-based project to securely and user-friendly browse directories and files. This tool allows exploring folders and files on a server without requiring external dependencies while offering a high level of privacy.
 
 ## Features
 
-- **Breadcrumb-Navigation**: Einfaches Springen zwischen Verzeichnissen.
-- **Sichere Pfadbehandlung**: Schutz vor Directory-Traversal-Angriffen.
-- **Anpassbare Ignorierlisten**: Blendet bestimmte Dateien und Verzeichnisse aus.
-- **Lokale Ressourcen**: Bootstrap und Font Awesome werden lokal bereitgestellt.
-- **Dynamisches Nachladen**: Ordnerinhalte werden per AJAX geladen.
+- Easy navigation between directories.
+- Protection against directory traversal attacks.
+- Customizable ignore lists to hide specific files and directories.
+- Resources like Bootstrap and Font Awesome are provided locally.
 
-## Systemanforderungen
+## System Requirements
 
-- PHP ab Version 7.4 (empfohlen: PHP 8.0+).
-- Webserver mit PHP-Unterstützung (z. B. Apache, Nginx, Lighttpd).
-- PHP-Module: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
-- Schreib- und Leserechte für das Zielverzeichnis.
+- PHP version 7.4 or higher (recommended: PHP 8.0+).
+- Web server with PHP support (e.g., Apache, Nginx, Lighttpd).
+- PHP modules: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
+- Write and read permissions for the target directory.
 
 ## Installation
 
-1. **Repository klonen:**
+**1. Clone the repository:**
+
    ```bash
    git clone https://github.com/dbt1/tuxbox-explorer && cd tuxbox-explorer
    ```
-2. **Konfiguration anpassen:**
-   - Benenne `config/config-sample.php` in `config/config.php` um.
-   - Passe wenn erforderlich die Listen in `config.php` an, um bestimmte Dateien und Ordner ein- oder auszublenden.
-     Lege den oder die Datenordner flexibel über Ignor und Allow-Listen fest, in der die gehosteten Dateien liegen, die zur Verfügung gestellt werden sollen.
-   - Passe bei Bedarf die Beschriftungen und Fenstertexte in `config.php` an.
-3. **Lade den gesamten Inhalt aus dem geklonten Repository auf einen PHP-fähigen Server hoch.**
-4. **Starten:**
-   Öffne `index.php` im Browser.
+**2. Adjust configuration:**
 
-## Nutzung
+   - Rename `config/config-sample.php` to `config/config.php`.
+   - Modify the lists in `config.php` if necessary to include or exclude specific files and folders.
+     Define the data folder(s) flexibly through ignore and allow lists to specify which hosted files should be made available.
+   - Adjust the labels and window texts in `config.php` if required.
+   - Upload the entire content of the cloned repository to a PHP-enabled server.
+   - Open `index.php` in the browser.
 
-- **Ordner durchsuchen:**
-  Klicke auf Ordner, um deren Inhalte anzuzeigen.
-- **Breadcrumb-Navigation:**
-  Nutze die Breadcrumb-Leiste, um schnell zu übergeordneten Verzeichnissen zu wechseln.
+## Usage
 
-## Konfigurationshinweise
+Click on folders to view their contents.
+Use the breadcrumb navigation bar to quickly switch to parent directories.
 
-Die Datei `config.php` erlaubt die Anpassung folgender Parameter:
+## Configuration Notes
 
-- **ROOT\_PATH**: Absoluter Pfad, der als Wurzelverzeichnis dient.
-- **IGNORE\_DIR\_PATTERNS**: Verzeichnisse, die ignoriert werden sollen (z. B. `.git`, `node_modules`).
-- **IGNORE\_FILE\_PATTERNS**: Dateien, die ignoriert werden sollen (z. B. `*.log`, `*.html`).
-- **ALLOW\_DIR\_PATTERNS**: Verzeichnisse, die trotz Ignorierliste angezeigt werden sollen.
-- **ALLOW\_FILE\_PATTERNS**: Dateien, die trotz Ignorierliste angezeigt werden sollen.
-- **DIRECTORY\_ALIASES**: Anzeigenamen für Verzeichnisse festlegen.
+The `config.php` file allows customization of the following parameters:
 
-Für die Datenschutz Informationen:
+Absolute path to serve as the root directory.
 
-- **DATA\_CONTROLLER\_NAME**
-- **DATA\_CONTROLLER\_ADDRESS**
-- **DATA\_CONTROLLER\_EMAIL**
-- **DATA\_CONTROLLER\_EMAIL\_ALIAS**
+   ```bash
+   ROOT_PATH
+   ```
 
-## Verwendete Ressourcen
+Directories to ignore (e.g., `.git`, `node_modules`).
 
-Dieses Repository stellt lokale Kopien der folgenden Ressourcen bereit, um die Nutzung ohne externe Abhängigkeiten zu ermöglichen und die Privatsphäre zu schützen:
+   ```bash
+   IGNORE_DIR_PATTERNS
+   ```
 
-- **Bootstrap v5.3.0**
+Files to ignore (e.g., `*.log`, `*.html`).
+
+   ```bash
+   IGNORE_FILE_PATTERNS
+   ```
+
+Directories to display despite the ignore list.
+
+   ```bash
+   ALLOW_DIR_PATTERNS
+   ```
+
+Files to display despite the ignore list.
+
+   ```bash
+   ALLOW_FILE_PATTERNS
+   ```
+
+Define display names for directories.
+
+   ```bash
+   DIRECTORY_ALIASES
+   ```
+
+For data protection information:
+
+   ```bash
+   DATA_CONTROLLER_NAME
+   DATA_CONTROLLER_ADDRESS
+   DATA_CONTROLLER_EMAIL
+   DATA_CONTROLLER_EMAIL_ALIAS
+   ```
+
+## Used Resources
+
+This repository provides local copies of the following resources to enable usage without external dependencies and ensure privacy:
+
+**Bootstrap v5.3.0**
 
   - CSS: `bootstrap.min.css`
   - JS: `bootstrap.bundle.min.js`
-  - Quelle: [https://getbootstrap.com](https://getbootstrap.com)
+  - Source: [https://getbootstrap.com](https://getbootstrap.com)
 
-- **Font Awesome v6.4.0**
+**Font Awesome v6.4.0**
 
   - CSS: `all.min.css`
   - JS: `all.min.js`
-  - Quelle: [https://fontawesome.com](https://fontawesome.com)
+  - Source: [https://fontawesome.com](https://fontawesome.com)
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der MIT-Lizenz. Details siehe [LICENSE](./LICENSE).
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
-### Hinweise zu den genutzten Ressourcen:
+### Notes on Used Resources:
 
-- **Bootstrap**: MIT-Lizenz. Details: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
-- **Font Awesome**: Verschiedene Lizenzen:
+**Bootstrap**
+
+MIT License.
+
+Details: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
+
+**Font Awesome**
+
+Various licenses:
+
   - Icons: CC BY 4.0
   - Fonts: SIL Open Font License 1.1
-  - Code: MIT-Lizenz
+  - Code: MIT License
 
-Bitte beachte die jeweiligen Lizenzbedingungen der oben genannten Ressourcen.
+Please refer to the respective license terms of the resources mentioned above.
+

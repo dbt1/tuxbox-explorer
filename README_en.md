@@ -1,5 +1,5 @@
 <!-- LANGUAGE_LINKS_START -->
-[🇩🇪 German](README_de.md) | <span style="color: grey;">🇬🇧 English</span> | [🇪🇸 Spanish](README_es.md) | [🇫🇷 French](README_fr.md) | [🇮🇹 Italian](README_it.md)
+[🇩🇪 German](README_de.md) | <span style="color: grey;">🇬🇧 English</span>
 <!-- LANGUAGE_LINKS_END -->
 # Tuxbox File Explorer
 
