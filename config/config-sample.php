@@ -6,40 +6,40 @@
  * Rename this file to "config.php" and adjust values as needed.
  *
  * System Requirements:
- *  - PHP >= 7.4 (better 8.0+)
- *  - Webserver with PHP-support
+ *  - PHP >= 7.4 (preferably 8.0+)
+ *  - Webserver with PHP support
  */
 
 /**
  * ROOT_PATH:
- * The absolute path you want to serve as the "root" for the explorer.
- * By default, we pick the parent directory of "/config".
- * Adjust as needed.
+ * The absolute path to serve as the "root" for the explorer.
+ * By default, the parent directory of "/config" is used.
+ * Adjust as necessary.
  */
 $ROOT_PATH = realpath(__DIR__ . '/../');
 
 /**
  * FILES_DIRECTORY:
- * Optional: If you want the script to display files from a specific directory
- * (different from $ROOT_PATH), define it here as an absolute path.
- * If empty or invalid, the script will fall back to $ROOT_PATH.
+ * Optional: Specify a directory whose files should be displayed,
+ * separate from $ROOT_PATH, by providing an absolute path.
+ * If empty or invalid, the script will default to $ROOT_PATH.
  */
 #$FILES_DIRECTORY = realpath(__DIR__ . '/../storage');
 #$FILES_DIRECTORY = realpath('/var/www/my_project/sample');
 #$FILES_DIRECTORY = '/home/user/symlink_to_my_folder';
 #$FILES_DIRECTORY = '/home/user/tuxbox/buildenv/dist';
 
-// Data controller information for the privacy policy site
+// Data controller information for the privacy policy page
 $DATA_CONTROLLER_NAME    = "Your Company / Your Name";
 $DATA_CONTROLLER_ADDRESS = "Your Address";
 $DATA_CONTROLLER_EMAIL   = "youremail@example.com";
-// Email display alias (z.B. "Contact Us" statt der E-Mail-Adresse)
+// Email display alias (e.g., "Contact Us" instead of the email address)
 $DATA_CONTROLLER_EMAIL_ALIAS = "Contact Us";
 
 /**
  * IGNORE_DIR_PATTERNS:
  * Wildcard patterns for directories to be ignored.
- * e.g. ["vendor", "storage", "cache*", ".git", "*"] etc.
+ * e.g., ["vendor", "storage", "cache*", ".git", "*"] etc.
  * Patterns are matched case-insensitively.
  */
 $IGNORE_DIR_PATTERNS = [
@@ -53,7 +53,7 @@ $IGNORE_DIR_PATTERNS = [
 /**
  * IGNORE_FILE_PATTERNS:
  * Wildcard patterns for files to be ignored.
- * e.g. ["*.log", "*.php", "Thumbs.db"]
+ * e.g., ["*.log", "*.php", "Thumbs.db"]
  */
 $IGNORE_FILE_PATTERNS = [
     '*.css',
@@ -72,9 +72,9 @@ $IGNORE_FILE_PATTERNS = [
 
 /**
  * ALLOW_DIR_PATTERNS:
- * If a directory matches any of these patterns, it won't be ignored
- * even if it appears in the ignore list.
- * e.g. ["specialFolder*", "foo"]
+ * Directories matching these patterns will not be ignored,
+ * even if they appear in the ignore list.
+ * e.g., ["specialFolder*", "foo"]
  */
 $ALLOW_DIR_PATTERNS = [
     // "tmp",
@@ -83,9 +83,9 @@ $ALLOW_DIR_PATTERNS = [
 
 /**
  * ALLOW_FILE_PATTERNS:
- * If a file matches any of these patterns, it won't be ignored
- * even if it appears in the ignore list.
- * e.g. ["*.ipk", "*.docx"]
+ * Files matching these patterns will not be ignored,
+ * even if they appear in the ignore list.
+ * e.g., ["*.ipk", "*.docx"]
  */
 $ALLOW_FILE_PATTERNS = [
     // "*.ipk",
@@ -95,7 +95,7 @@ $ALLOW_FILE_PATTERNS = [
 /**
  * DIRECTORY_ALIASES:
  * Map real directory names to an alias.
- * e.g. ["tmp" => "Temporary", "var" => "System Logs"]
+ * e.g., ["tmp" => "Temporary", "var" => "System Logs"]
  */
 $DIRECTORY_ALIASES = [
     //'tmp' => 'Temporary',
@@ -111,19 +111,19 @@ $APP_TITLE = "File Explorer";
  * APP_SUBTITLE:
  * Subtitle or short description displayed below the title.
  */
-$APP_SUBTITLE = "";//"Browse your files easily.";
+$APP_SUBTITLE = ""; //"Browse your files easily.";
 
 /**
  * APP_LOGO_URL:
  * Optional URL or path to your logo image (PNG, JPEG, GIF, SVG).
  * If empty, layout is centered. If set, the logo appears to the left.
- * e.g. "assets/images/logo.png" or "https://example.com/logo.svg"
+ * e.g., "assets/images/logo.png" or "https://example.com/logo.svg"
  */
 $APP_LOGO_URL = "assets/images/logo.png";
 
 /**
  * COPYRIGHT_YEAR, COPYRIGHT_OWNER, FOOTER_TEXT:
- * For the page footer. Typically includes your name/company, year, disclaimers etc.
+ * For the page footer. Typically includes your name/company, year, disclaimers, etc.
  */
 $COPYRIGHT_YEAR  = date("Y");
 $COPYRIGHT_OWNER = "Thilo Graf";
