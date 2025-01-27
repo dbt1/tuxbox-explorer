@@ -4,7 +4,7 @@
 
 # Tuxbox File Explorer
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
+[![Version](https://img.shields.io/badge/version-0.1.17-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
 
 Ein leichtgewichtiges, PHP-basiertes Projekt, um Verzeichnisse und Dateien sicher und benutzerfreundlich zu durchsuchen. Dieses Tool erlaubt es, Ordner und Dateien auf einem Server zu erkunden, ohne externe Abhängigkeiten zu benötigen, und bietet gleichzeitig ein hohes Maß an Privatsphäre.
 
