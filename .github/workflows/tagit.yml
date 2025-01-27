@@ -35,7 +35,6 @@ jobs:
       run: |
         pip install GitPython
         curl -o tagit.py https://raw.githubusercontent.com/dbt1/tagit/master/tagit.py
-        curl -o tagit-config.json https://raw.githubusercontent.com/dbt1/tagit/master/tagit-config.json
         chmod +x tagit.py
 
     - name: Verify tagit.py download
@@ -47,11 +46,5 @@ jobs:
 
     - name: Tagging
       run: |
-        python tagit.py -f index.php -f README_de.md -f README_en.md --scheme-file tagit-config.json
-
-    - name: Commit and push version and tag changes
-      run: |
-        git add README*.md index.php
-        git commit -m "tagging: Automatically updated tags [skip ci]" || echo "No changes to commit"
-        git push
-        git push --tags
+        python tagit.py -f index.php -f README_de.md -f README_en.md --scheme-file ./.github/tagit-config.json
+        rm tagit.py
