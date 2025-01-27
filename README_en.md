@@ -1,85 +1,135 @@
 <!-- LANGUAGE_LINKS_START -->
 [🇩🇪 German](README_de.md) | <span style="color: grey;">🇬🇧 English</span>
 <!-- LANGUAGE_LINKS_END -->
+
 # Tuxbox File Explorer
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/dbt1/tuxbox-explorer)
 
-A lightweight PHP-based project to browse directories and files in a secure and user-friendly manner. This tool allows you to explore folders and files on a server without the need for external dependencies, while providing a high level of privacy.
+A lightweight PHP-based project to securely and user-friendly browse directories and files. This tool allows you to explore folders and files on a server without external dependencies while ensuring a high level of privacy.
+
 ## Features
 
-- **Breadcrumb navigation**: Easily jump between directories.
-- **Secure Path Handling**: Protection against directory traversal attacks.
-- **Customizable Ignore Lists**: Hides specific files and directories.
-- **Local Resources**: Bootstrap and Font Awesome are provided locally.
-- **Dynamic reloading**: Folder contents are loaded via AJAX.
-## System requirements
+- Easy navigation between directories.
+- Protection against directory traversal attacks.
+- Customizable ignore lists to exclude specific files and directories.
+- Local hosting of resources like Bootstrap and Font Awesome.
 
-- PHP from version 7.4 (recommended: PHP 8.0+).
-- Web server with PHP support (e.g. Apache, Nginx, Lighttpd).
+## System Requirements
+
+- PHP version 7.4 or higher (recommended: PHP 8.0+).
+- Web server with PHP support (e.g., Apache, Nginx, Lighttpd).
 - PHP modules: php-mbstring, php-json, php-xml, php-curl, php-fileinfo, php-ctype, php-iconv
-- Write and read permissions for the target directory.
-## installation
+- Read and write permissions for the target directory.
 
-1. **Clone repository:**
+## Installation
+
+### Clone the Repository
+
    ```bash
    git clone https://github.com/dbt1/tuxbox-explorer && cd tuxbox-explorer
    ```
-2. **Adjust configuration:**
+### Adjust Configuration
+
    - Rename `config/config-sample.php` to `config/config.php`.
-   - If necessary, adjust the lists in `config.php` to show or hide specific files and folders.
-     Use ignore and allow lists to flexibly specify the data folder(s) in which the hosted files that should be made available are located.
-   - If necessary, adjust the labels and window texts in `config.php`.
-3. **Upload all content from the cloned repository to a PHP-enabled server.**
-4. **Start:**
-   Open `index.php` in the browser.
-## use
+   - Customize the lists in `config.php` to include or exclude specific files and folders.
+   - Adjust labels and window texts in `config.php` if needed.
+   - Upload the entire content from the cloned repository to a PHP-enabled server.
+   - Open `index.php` in your browser.
 
-- **Browse folder:**
-  Click folders to view their contents.
-- **Breadcrumb navigation:**
-  Use the breadcrumb bar to quickly move to higher-level directories.
-## Configuration notes
+## Configuration Options
 
-The `config.php` file allows the following parameters to be adjusted:
+The PHP Directory Explorer provides a simple way to browse files and directories on your server. Using the `config.php` file, you can adjust the explorer's behavior and appearance. To get started, rename `config.example.php` to `config.php` and configure the following options:
 
-- **ROOT\_PATH**: Absolute path that serves as the root directory.
-- **IGNORE\_DIR\_PATTERNS**: Directories to be ignored (e.g. `.git`, `node_modules`).
-- **IGNORE\_FILE\_PATTERNS**: Files to be ignored (e.g. `*.log`, `*.html`).
-- **ALLOW\_DIR\_PATTERNS**: Directories that should be displayed despite the ignore list.
-- **ALLOW\_FILE\_PATTERNS**: Files that should be displayed despite the ignore list.
-- **DIRECTORY\_ALIASES**: Set display names for directories.
+### General Settings
 
-For data protection information:
+#### Root and Files Directory
+- **`ROOT_PATH`**: The main folder from which files and directories are displayed. By default, this is the parent directory of the `config` folder.
+- **`FILES_DIRECTORY`** *(Optional)*: A specific directory whose files should be displayed. If empty or invalid, `ROOT_PATH` will be used.
 
-- **DATA\_CONTROLLER\_NAME**
-- **DATA\_CONTROLLER\_ADDRESS**
-- **DATA\_CONTROLLER\_EMAIL**
-- **DATA\_CONTROLLER\_EMAIL\_ALIAS**
-## Resources used
+#### Privacy Information
+- **`DATA_CONTROLLER_NAME`**: Your name or your company's name.
+- **`DATA_CONTROLLER_ADDRESS`**: Your address for legal or contact purposes.
+- **`DATA_CONTROLLER_EMAIL`**: The email address for contact inquiries.
+- **`DATA_CONTROLLER_EMAIL_ALIAS`**: An alias like "Contact Us" instead of displaying the email address.
 
-This repository provides local copies of the following resources to enable use without external dependencies and to protect privacy:
+### Filtering and Display Options
 
-- **Bootstrap v5.3.0**
+#### Exclude Directories and Files
+- **`IGNORE_DIR_PATTERNS`**: List of directories to ignore (e.g., `vendor`, `.git*`).
+- **`IGNORE_FILE_PATTERNS`**: Files to exclude (e.g., `*.log`, `index.php`).
+
+#### Define Exceptions
+- **`ALLOW_DIR_PATTERNS`**: Directories to display even if listed in the ignore patterns.
+- **`ALLOW_FILE_PATTERNS`**: Files to display even if listed in the ignore patterns.
+
+#### Directory Aliases
+- **`DIRECTORY_ALIASES`**: Assign user-friendly names to certain directories, e.g., map `tmp` to "Temporary".
+
+### Appearance Customization
+
+#### Titles and Logo
+- **`APP_TITLE`**: The main title displayed at the top of the page.
+- **`APP_SUBTITLE`** *(Optional)*: A subtitle or short description.
+- **`APP_LOGO_URL`** *(Optional)*: URL or path to a logo (PNG, JPEG, GIF, SVG). If no logo is provided, the layout is centered.
+
+#### Footer and Navigation Texts
+- **`COPYRIGHT_YEAR`**: Automatically displays the current year in the footer.
+- **`COPYRIGHT_OWNER`**: Your name or company displayed in the footer.
+- **`FOOTER_TEXT`**: Customizable text for additional notes or disclaimers.
+- **`NAVIGATION_TITLE`**: Title displayed above the navigation bar.
+- **`BROWSER_TITLE`**: Title displayed above the file and folder list.
+
+### Usage Examples
+
+With these settings, you can tailor the explorer for various scenarios, such as:
+- Displaying files from a specific directory.
+- Customizing the design to match your branding.
+- Excluding or including directories and files to simplify the interface.
+
+For more details, refer to the comments in the `config.php` file. Enjoy customizing!
+
+## Usage
+
+- Click on folders to view their contents.
+- Use the breadcrumb bar to quickly navigate to parent directories.
+
+## Included Resources
+
+This repository provides local copies of the following resources to ensure privacy and avoid external dependencies:
+
+**Bootstrap v5.3.0**
 
   - CSS: `bootstrap.min.css`
   - JS: `bootstrap.bundle.min.js`
   - Source: [https://getbootstrap.com](https://getbootstrap.com)
 
-- **Font Awesome v6.4.0**
+**Font Awesome v6.4.0**
 
   - CSS: `all.min.css`
   - JS: `all.min.js`
   - Source: [https://fontawesome.com](https://fontawesome.com)
+
 ## License
 
-This project is under the MIT license. For details see [LICENSE](./LICENSE).
-### Notes on the resources used:
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
-- **Bootstrap**: MIT license. Details: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
-- **Font Awesome**: Various licenses:
+### Notes on Included Resources:
+
+**Bootstrap**
+
+MIT License.
+
+Details: [Bootstrap License](https://github.com/twbs/bootstrap/blob/main/LICENSE).
+
+**Font Awesome**
+
+Various licenses:
+
   - Icons: CC BY 4.0
   - Fonts: SIL Open Font License 1.1
-  - Code: MIT license
+  - Code: MIT License
 
-Please note the respective license terms of the resources mentioned above.
+Please ensure to comply with the respective licenses of the mentioned resources.
+
+
